@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+</head>
+<body>
+    
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+        const infos={
+            nom:"Med",
+            prenom:"dev",
+            age:25,
+            tel:"0626262626",
+            mail:"fullstack@gmail.com"
+        }
+
+        function Avatar({size}){
+            return(
+                <img src="profile.jpg" alt="avatar"
+                     style={{width:size, borderRedius:50+'px'}}
+                />    
+            )
+        }
+
+        function Infos({infos}){
+                return (
+                    <ul>
+                        {
+                          infos.map((info,index)=>{ 
+                             return <li key={index}>{info[0] +' : '+ info[1]}</li>; 
+                                })
+                        }
+                    </ul>
+                )
+                
+        }
+
+
+        function Profile(){
+            return(
+                <>
+                
+                <Avatar size={120} />
+                <Avatar size={100}/>
+                <Avatar size={80}/>
+                
+                </>
+            )
+        }
+
+
+ReactDOM.render(<Profile/>, document.getElementById("app"));
+
+    </script>
+
+
+
+</body>
+</html>

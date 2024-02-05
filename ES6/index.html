@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+</head>
+<body>
+    
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+          
+        var nom='Med FullStack'
+        var infos=[['age','20'],['tel','064514541'],['mail','fullstack@gmail.com']]
+        
+        function Avatar({size}){
+            return(
+                <img className='avatar' 
+                 width={size} style={{}}
+                src="profile.jpg" alt="avatar"/>    
+            )
+        }
+        var elems = ["Element1", "Element2", "Element3", "Element4", "Element5"]
+        function Infos(){
+                return (
+                    <ul>
+                        {
+                          infos.map((info,index)=>{ 
+                             return <li key={index}>{info[0] +' : '+ info[1]}</li>; 
+                                })
+                        }
+                    </ul>
+                )
+                
+        }
+
+        
+        function Profile(){
+            return(
+                <>
+                <h2>{nom}</h2>
+                <Avatar size={120} />
+                <Avatar size={100}/>
+                <Avatar size={80}/>
+                <Infos/>
+                </>
+            )
+        }
+
+        var Liste=<ul>
+            <li>1</li></ul>
+        
+    
+ReactDOM.render(<Profile/>, document.getElementById("app"));
+
+    </script>
+
+<style>
+    .avatar{
+        border-radius: 50%;
+    }
+</style>
+
+</body>
+</html>
